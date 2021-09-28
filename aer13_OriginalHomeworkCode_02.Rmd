@@ -17,6 +17,9 @@ one <- dpois(x = x, lambda = l, log = FALSE) #X is the appropriate Poisson rando
 probability <- sum(one) #use the sum() function to "sum" the probabilities that she will hear each number of calls between 8 and 30 to get the probability that she will hear more than 8 calls 
 probability
 ```
+
+NK: dpois gives you the probability that you will hear exactly a certain number of calls. ppois gives you the probability that you will hear 8 or fewer calls given a probability distribution based on the average of 15 calls per session. To use this function you would put ppois(x, lambda) where you want to know the proability that you will hear x or more calls in a session when lambda is the expected average. In this case, x is 8 and lambda is 15. However, the function automatically gives you the probability that you will hear x or fewer calls, so you either need to subtract this from 1 to get the probability that you hear x or more calls OR you can include "lower = FALSE" in your argument which will direct the function to take the upper end of the probability distribution from the specified x.
+
 ```{r}
 barplot(one, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability of more than 8 calls")
 ```
@@ -30,6 +33,8 @@ two <- dpois(x = x, lambda = l, log = FALSE)
 two
 ```
 
+NK: You can write the function as you did or you can plug the numbers into the argument. Ex: dpois(0, 15) will also give you the same answer. It's actually not necessary to assign dpois to a variable in order for it to spit out an answer, although it works both ways.
+
 3. What is the probability that she will hear exactly 3 calls in a session?
 
 ```{r}
@@ -39,6 +44,8 @@ three <- dpois(x = x, lambda = l, log = FALSE)
 three
 ```
 
+NK: Same commentary as for 2. I got the same answer though! 
+
 4. Plot the relevant Poisson mass function over the values in range 0 ≤ x ≤ 30.
 
 ```{r}
@@ -47,12 +54,17 @@ l = 15
 four <- dpois(x = x, lambda = l)
 barplot(four, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability Mass Function over 0 ≤ x ≤ 30")
 ```
+
+NK: We got the same here!
+
 5. Simulate 104 results from this distribution (i.e., 2 years of Saturday monitoring sessions).
 
 ```{r}
 data <- rpois(n = 104, lambda = 15) #rpois() function can be used to simulate data in the poisson distribution. n = the number of samples, lambda = mean of data 
 data
 ```
+NK: Same!
+
 6. Plot the simulated results using hist() and use xlim() to set the horizontal limits to be from 0 to 30.
 
 ```{r}
@@ -63,6 +75,7 @@ hist(data, xlab = "Number of Calls", ylab = "Frequency of Calls", main = "Histog
 
 The probability mass function illustrates a perfect Poisson distribution and therefore does not include any random error. Conversely, my simulates data is random and therefore includes some random error which causes it to not resemble the probability mass function perfectly. However, the simulated data still centers around the mean of 15 
 
+NK: I had a similar answer. As sample size increases, the histogram resembles the probability mass function more. 
 
 Challenges: 
 1. I struggled with figure out what "x" should be in the dpois function
