@@ -31,6 +31,7 @@ two <- dpois(x = x, lambda = l, log = FALSE)
 two
 ```
 
+
 3. What is the probability that she will hear exactly 3 calls in a session?
 
 ```{r}
@@ -48,6 +49,7 @@ l = 15
 four <- dpois(x = x, lambda = l)
 barplot(four, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability Mass Function over 0 ≤ x ≤ 30")
 ```
+
 
 5. Simulate 104 results from this distribution (i.e., 2 years of Saturday monitoring sessions).
 
