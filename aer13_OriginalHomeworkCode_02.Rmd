@@ -17,6 +17,7 @@ one <- dpois(x = x, lambda = l, log = FALSE) #X is the appropriate Poisson rando
 probability <- sum(one) #use the sum() function to "sum" the probabilities that she will hear each number of calls between 8 and 30 to get the probability that she will hear more than 8 calls 
 probability
 ```
+
 ```{r}
 barplot(one, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability of more than 8 calls")
 ```
@@ -47,12 +48,14 @@ l = 15
 four <- dpois(x = x, lambda = l)
 barplot(four, names.arg = x, space = 0, xlab = "x", ylab = "Pr(X = x)", main = "Probability Mass Function over 0 ≤ x ≤ 30")
 ```
+
 5. Simulate 104 results from this distribution (i.e., 2 years of Saturday monitoring sessions).
 
 ```{r}
 data <- rpois(n = 104, lambda = 15) #rpois() function can be used to simulate data in the poisson distribution. n = the number of samples, lambda = mean of data 
 data
 ```
+
 6. Plot the simulated results using hist() and use xlim() to set the horizontal limits to be from 0 to 30.
 
 ```{r}
@@ -63,7 +66,5 @@ hist(data, xlab = "Number of Calls", ylab = "Frequency of Calls", main = "Histog
 
 The probability mass function illustrates a perfect Poisson distribution and therefore does not include any random error. Conversely, my simulates data is random and therefore includes some random error which causes it to not resemble the probability mass function perfectly. However, the simulated data still centers around the mean of 15 
 
-
 Challenges: 
 1. I struggled with figure out what "x" should be in the dpois function
-
