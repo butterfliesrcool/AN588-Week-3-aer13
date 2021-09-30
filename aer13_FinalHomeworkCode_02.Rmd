@@ -61,6 +61,3 @@ hist(data, xlab = "Number of Calls", ylab = "Frequency of Calls", main = "Histog
 
 The probability mass function illustrates a perfect Poisson distribution and therefore does not include any random error. Conversely, my simulates data is random and therefore includes some random error which causes it to not resemble the probability mass function perfectly. However, the simulated data still centers around the mean of 15. The randomly simulated data will more closely resemble the Poisson distribution as sample size gets larger. 
 
-
-Challenges: 
-1. I struggled with figure out what "x" should be in the dpois function
