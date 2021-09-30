@@ -11,7 +11,7 @@ output: html_document
 
 ```{r}
 ?dpois() #dpois and ppois functions can be used to generate Poisson distributions 
-?ppois()
+?ppois() #ppois allows you to generate all variables greater than x
 one <- ppois(8, 15, lower = FALSE) #X is the appropriate Poisson random variable and lambda is the mean 
 one
 ```
